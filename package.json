@@ -1,0 +1,23 @@
+{
+  "name": "convertmymoney",
+  "version": "1.0.0",
+  "description": "App to cconvert money using the value of dollar to reais ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "money",
+    "dollar"
+  ],
+  "author": "Matheus Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
