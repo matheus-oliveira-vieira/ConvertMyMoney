@@ -1,9 +1,38 @@
 <%- include('header') %>
 
-<form method="GET" action="/cotacao">
-    <input name="cotacao" placeholder="Cotação do Dólar" value="<%= cotacao %>"><br>
-    <input name="quantidade" placeholder="Quantidade de Dólares"><br>
-    <button>Converter</button>
+<form method="GET" action="/cotacao" class="form-inline justify-content-center needs-validation" novalidate>
+        <div class="form-group mr-5"> 
+            <input class="form-control" type="text" name="cotacao" placeholder="Cotação do Dólar" value="<%= cotacao %>" style="text-align:center" required><br>
+            <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
+
+        <div class="form-group mr-5">
+            <input class="form-control" name="quantidade" placeholder="Quantidade de Dólares" style="text-align:center" required><br>
+            <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
+        
+            <button type="submit" class="btn btn-success">Converter</button>
+        
+
 </form>
+
+<script>
+    
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 
 <%- include('footer') %>
